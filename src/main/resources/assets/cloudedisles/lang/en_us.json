@@ -1,0 +1,18 @@
+{
+  "item.cloudedisles.astral_prism": "Astral Prism",
+  "item.cloudedisles.skysteel_ingot": "Skysteel Ingot",
+  "item.cloudedisles.starborne_cleaver": "Starborne Cleaver",
+  "item.cloudedisles.cloud_bottle": "Cloud in a Bottle",
+  "item.cloudedisles.guardian_shield": "Guardian Shield",
+
+  "block.cloudedisles.skysteel_block": "Block of Skysteel",
+  "block.cloudedisles.cloud": "Cloud",
+  "block.cloudedisles.skystone": "Skystone",
+
+  "itemgroup.clouded-isles": "Clouded Isles",
+
+  "tooltip.cloudedisles.starborne_cleaver.tooltip": "§8§oRight-Click on an enemy to smash them with a meteor",
+  "tooltip.cloudedisles.guardian_shield.tooltip": "§8§oRight-Click while shifting to damage nearby enemies",
+  "tooltip.cloudedisles.cloud_bottle.tooltip": "§8§oRight-Click to dash in the direction you are facing",
+  "tooltip.cloudedisles.astral_prism.tooltip": "§8§oPoints towards the nearest sky isle. (R-Click to activate)"
+}

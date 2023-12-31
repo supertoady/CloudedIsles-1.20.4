@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "cloudedisles:raw_skysteel_block",
+    "cloudedisles:skysteel_block",
+    "cloudedisles:skystone"
+  ]
+}

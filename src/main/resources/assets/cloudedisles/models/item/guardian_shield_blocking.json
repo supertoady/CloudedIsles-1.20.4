@@ -1,0 +1,27 @@
+{
+  "parent": "cloudedisles:item/guardian_shield",
+
+  "textures": {
+    "0": "cloudedisles:item/shield_texture",
+    "particle": "cloudedisles:item/shield_texture"
+  },
+
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [65, 0, 0],
+      "translation": [-1, 0, 1]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [65, 0, 0],
+      "translation": [-1, 0, 1]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, -10, 0],
+      "translation": [-2, 1, -1]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, -10, 0],
+      "translation": [-2, 1, -1]
+    }
+  }
+}
