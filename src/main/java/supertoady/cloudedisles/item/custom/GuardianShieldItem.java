@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import supertoady.cloudedisles.item.ModItems;
@@ -50,9 +51,11 @@ public class GuardianShieldItem extends ShieldItem {
 
                 world.addParticle(ParticleTypes.SPLASH, x + target.getX(), y + target.getY(), z + target.getZ(), 0, 0, 0);
                 user.playSound(SoundEvents.ENTITY_GUARDIAN_ATTACK, 0.6f, 1.0f);
-            }
 
-            target.damage(target.getDamageSources().magic(), 8);
+                //target.addVelocity(user.getX() - target.getX(), user.getY() - target.getY(), user.getZ() - target.getZ());
+
+                target.damage(target.getDamageSources().magic(), 8);
+            }
         }
 
         user.getItemCooldownManager().set(this, 100);
