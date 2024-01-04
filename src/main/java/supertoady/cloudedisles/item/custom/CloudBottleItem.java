@@ -41,7 +41,7 @@ public class CloudBottleItem extends Item {
         }
 
         user.addVelocity(look.x, look.y, look.z);
-        user.getItemCooldownManager().set(this, 150);
+        user.getItemCooldownManager().set(this, 100);
         user.fallDistance = 0;
 
         return TypedActionResult.success(user.getStackInHand(hand));

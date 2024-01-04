@@ -41,6 +41,8 @@ public class GuardianShieldItem extends ShieldItem {
 
         if (entities.isEmpty() || !user.isSneaking()) return TypedActionResult.pass(user.getStackInHand(hand));
 
+        Vec3d look = user.getRotationVector().normalize();
+
         for (Entity target : entities){
             for (int i = 15; i > -1; i--){
                 Random rand = new Random();
@@ -50,15 +52,15 @@ public class GuardianShieldItem extends ShieldItem {
                 double z = rand.nextDouble(2) - 1;
 
                 world.addParticle(ParticleTypes.SPLASH, x + target.getX(), y + target.getY(), z + target.getZ(), 0, 0, 0);
-                user.playSound(SoundEvents.ENTITY_GUARDIAN_ATTACK, 0.6f, 1.0f);
-
-                //target.addVelocity(user.getX() - target.getX(), user.getY() - target.getY(), user.getZ() - target.getZ());
-
-                target.damage(target.getDamageSources().magic(), 8);
             }
+
+            user.playSound(SoundEvents.ENTITY_GUARDIAN_ATTACK, 0.6f, 1.0f);
+
+            target.addVelocity(look.x * 0.7, look.y * 0.7, look.z * 0.7);
+            target.damage(target.getDamageSources().magic(), 8);
         }
 
-        user.getItemCooldownManager().set(this, 100);
+        user.getItemCooldownManager().set(this, 150);
 
         return result;
     }

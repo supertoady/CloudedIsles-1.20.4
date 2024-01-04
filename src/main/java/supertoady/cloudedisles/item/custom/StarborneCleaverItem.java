@@ -36,14 +36,14 @@ public class StarborneCleaverItem extends SwordItem {
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
         NbtCompound nbt = stack.getOrCreateNbt();
 
-        if (nbt.getBoolean("cloudedisles:cleaveractive") || user.getItemCooldownManager().isCoolingDown(this)) return ActionResult.PASS;
+        if (user.getItemCooldownManager().isCoolingDown(this)) return ActionResult.PASS;
+        user.getItemCooldownManager().set(this, 200);
+
         nbt.putBoolean("cloudedisles:cleaveractive", true);
         nbt.putInt("cloudedisles:cleaverticks", 10);
         nbt.putDouble("cloudedisles:cleaverx", entity.getX());
         nbt.putDouble("cloudedisles:cleavery", entity.getY() + 10);
         nbt.putDouble("cloudedisles:cleaverz", entity.getZ());
-
-        user.getItemCooldownManager().set(this, 200);
 
         return ActionResult.SUCCESS;
     }
@@ -64,8 +64,12 @@ public class StarborneCleaverItem extends SwordItem {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         NbtCompound nbt = stack.getOrCreateNbt();
+        if (!nbt.getBoolean("cloudedisles:cleaveractive")){
+            entity.sendMessage(Text.literal("not active"));
+            return;
+        }
 
-        if (!nbt.getBoolean("cloudedisles:cleaveractive")) return;
+        entity.sendMessage(Text.literal("active"));
 
         int ticks = nbt.getInt("cloudedisles:cleaverticks") - 1;
         if (ticks == -1) meteorExplode(nbt, (PlayerEntity) entity);
