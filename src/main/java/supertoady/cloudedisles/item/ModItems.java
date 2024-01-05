@@ -26,7 +26,7 @@ public class ModItems {
             new AstralPrismItem(new FabricItemSettings().maxCount(1).rarity(Rarity.UNCOMMON)));
 
     public static final Item STARBORNE_CLEAVER = registerItem("starborne_cleaver",
-            new StarborneCleaverItem(ModToolMaterial.SKYSTEEL, 5, -3F
+            new StarborneCleaverItem(ModToolMaterial.SKYSTEEL, 5, -2.8F
                     , new FabricItemSettings().rarity(Rarity.RARE)));
 
     public static final Item CLOUD_BOTTLE = registerItem("cloud_bottle",

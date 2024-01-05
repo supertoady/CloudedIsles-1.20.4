@@ -69,7 +69,7 @@ public class StarborneCleaverItem extends SwordItem {
             return;
         }
 
-        entity.sendMessage(Text.literal("active"));
+        //entity.sendMessage(Text.literal("active"));
 
         int ticks = nbt.getInt("cloudedisles:cleaverticks") - 1;
         if (ticks == -1) meteorExplode(nbt, (PlayerEntity) entity);
